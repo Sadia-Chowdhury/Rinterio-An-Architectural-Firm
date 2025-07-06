@@ -1,354 +1,892 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tea House</title>
+    <title>Rinterio</title>
 
-    <!-- google fonts cdn  -->
+    <!-- Google font link  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
-    <!-- fontawesome cdn  -->
+    <!-- font awesome link  -->
     <script src="https://kit.fontawesome.com/d8894525ac.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-09b459cf485d4b1f3304947240314c05.css?vsn=d">
 
-    <!-- tailwind cdn  -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+
+    <!-- Tailwind and Daisy UI cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- flaticon cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/flat-icons@1.0.0/creative.min.css" rel="stylesheet">
+
+
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        primary: '#212121',
+                        secondary: '#494949',
+                        accent: '#737373',
+                        body: '#F4F4F4',
+                        color_bg: '#ABEF5F',
+                        font_bg_color: '#1C1C1C',
                     },
                     fontFamily: {
-                        'manrope': ["Manrope", 'sans-serif']
+                        Manrope: 'Manrope'
                     },
+                    backgroundImage: {
+                        projectBg: "url('./images/bg.jpg')",
+                    }
                 }
             }
         }
     </script>
-
 </head>
 
-<body class="font-manrope">
-    <!-- header start  -->
-    <header>
+<body class="font-Manrope">
+
+    <!-- header starts here  -->
+    <header class="bg-gradient-to-b from-[#f7f7f7b5] to-[#ffffffa1]">
+
+        <!-- navbar starts here  -->
+        <nav class="w-11/12 md:w-10/12 mx-auto">
+            <div class="navbar p-0 py-4">
+                <div class="navbar-start w-1/2 md:w-[35%]">
+
+                    <div class="flex items-center gap-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10 text-black bg-color_bg mt-2 p-2 rounded-full">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                        </svg>
+                        <a class="text-3xl font-extrabold" href="#">Rinterio</a>
+                    </div>
+                </div>
+
+                <!-- navbar menu  -->
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-accent">
+                        <li>
+                            <a href="#"
+                                class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Home</a>
+                        </li>
+                        <li><a href="#services"
+                                class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Services</a>
+                        </li>
+                        <li><a href="#portfolio" class="hover:text-secondary transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Portfolio</a></li>
+                        <li><a href="#blogs"
+                                class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Blogs</a>
+                        </li>
+                        <li><a href="#contact-us" class="hover:text-secondary transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end ">
+                    <div class="items-center gap-4 hidden md:flex">
+                        <div class="text-accent">
+                            <i
+                                class="fa-solid fa-magnifying-glass bg-white rounded-full p-3 border border-gray-100 text-accent"></i>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-cart-shopping bg-white border 
+                            border-gray-100 rounded-full p-3 text-accent"></i>
+                        </div>
+                        <div>
+                            <a
+                                class="btn border-0 text-font_bg_color bg-color_bg text-lg font-extrabold rounded-3xl hover:bg-transparent hover:border-2 hover:border-color_bg">Book
+                                Consult <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="size-8  bg-font_bg_color text-white rounded-full p-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- dropdown menu  -->
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn pr-0 btn-ghost lg:hidden">
+                            <i
+                                class="fa-solid fa-bars text-2xl bg-white rounded-full px-3.5 py-2 border border-gray-100 text-accent"></i>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-48 gap-4 right-0 shadow  text-accent">
+                            <li>
+                                <a href="#"
+                                    class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Home</a>
+                            </li>
+                            <li><a href="#services"
+                                    class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Services</a>
+                            </li>
+                            <li><a href="#portfolio" class="hover:text-secondary transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Portfolio</a></li>
+                            <li><a href="#blogs"
+                                    class="hover:text-secondary transition-colors ease-in-out duration-500 hover:font-extrabold">Blogs</a>
+                            </li>
+                            <li><a href="#contact-us" class="hover:text-secondary transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar ends here  -->
+
+        <!-- banner section starts here  -->
+        <section class="w-11/12 md:w-10/12  mx-auto flex flex-col items-center mt-4 md:mt-12">
+
+            <!-- banner image  -->
+            <div>
+                <img class="w-full h-full" src="images/banner.png" alt="">
+            </div>
+
+            <!-- text content  -->
+            <div class="text-center">
+                <h1 class="text-2xl md:text-4xl lg:text-6xl text-primary font-extrabold my-6">A barn house of this
+                    design has a
+                    striking
+                    appearance
+                </h1>
+                <p class="mb-7 w-full md:w-9/12 mx-auto text-secondary font-medium text-sm md:text-[16px]">A modern
+                    barn house
+                    with
+                    striking rustic
+                    elegance,
+                    featuring bold,
+                    angular lines
+                    and
+                    expansive
+                    windows, blending natural materials with contemporary design for a unique and timeless appeal.</p>
+                <button
+                    class="btn rounded-[32px] text-primary text-xl font-bold bg-color_bg bg-opacity-50 border border-color_bg w-full md:w-fit hover:bg-transparent hover:border-2 hover:border-color_bg">View
+                    Details
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg></button>
+            </div>
+        </section>
+        <!-- banner section ends here  -->
 
     </header>
+
     <!-- header ends here  -->
 
     <!-- main starts here  -->
-    <main class="md:max-w-screen-xl mx-auto px-2 md:px-16 lg:px-28">
-        <header class="md:flex pt-10 mb-20">
-            <!-- text-content  -->
-            <div>
-                <h1 class="text-5xl md:text-7xl">It's good <br>
-                    tea time at The <br> Tea House</h1>
-                <br>
-                <p class="text-gray-500 w-3/4">Tea and Botanical Solutions Supplier Give Optimum Satisfaction To Your
-                    Taste
-                    Buds.</p>
-                <br>
-
-                <button
-                    class="bg-gradient-to-r from-orange-500 to-red-500 px-5 py-3 rounded-lg text-white font-bold">Explore
-                    More <i class="fa-solid fa-arrow-right -rotate-45 tex-2xl"></i></button>
-            </div>
-
-            <!-- image content  -->
-            <div class="relative">
-                <!-- image  -->
-                <div>
-                    <img class="w-full" src="images/banner.png" alt="">
-                </div>
-
-                <!-- card  -->
-                <div
-                    class="flex items-center bg-white shadow-lg px-2 py-2 md:px-10 lg:py-4 rounded-lg absolute top-28 md:top-80 md:left-32 lg:left-28">
-                    <!-- icon  -->
-                    <div>
-                        <i class="fa-solid fa-star text-2xl text-amber-500"></i>
-                    </div>
-
-                    <!-- text  -->
-                    <div class="ml-2">
-                        <h2 class="lg:text-2xl font-bold">5.00</h2>
-                        <p class="text-gray-500">Trust Pilot Ratings</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- featured products section  -->
-        <section class="py-8 lg:py-24">
-            <!-- content  -->
-            <div class="text-center mb-8">
-                <h1 class=" text-3xl md:text-4xl mb-5">Our Featured Products</h1>
-                <p class="text-gray-500 max-w-xl mx-auto">There are many variations of passages of Lorem Ipsum
-                    available, but
-                    the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. </p>
-            </div>
-
-            <!-- grid cards  -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 text-center">
-                <!-- product card  -->
-                <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden">
-                    <img class="mx-auto pt-4" src="images/tea-1.png" alt="">
-                    <h2 class="font-bold text-xl mb-2">Green Tea</h2>
-                    <p class="text-gray-600 mb-5">Creamer could be replaced by fresh milk</p>
-                </div>
-                <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden">
-                    <img class="mx-auto pt-4" src="images/tea-2.png" alt="">
-                    <h2 class="font-bold text-xl mb-2">Milk Tea</h2>
-                    <p class="text-gray-600 mb-5">Creamer could be replaced by fresh milk</p>
-                </div>
-                <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden">
-                    <img class="mx-auto pt-4" src="images/tea-3.png" alt="">
-                    <h2 class="font-bold text-xl mb-2">Lemon Tea</h2>
-                    <p class="text-gray-600 mb-5">Creamer could be replaced by fresh milk</p>
-                </div>
-                <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden">
-                    <img class="mx-auto pt-4" src="images/tea-4.png" alt="">
-                    <h2 class="font-bold text-xl mb-2">Black Tea</h2>
-                    <p class="text-gray-600 mb-5">Creamer could be replaced by fresh milk</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- great tea section  -->
-        <section class="mb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 ">
-                <!-- image section  -->
-                <div class="grid grid-cols-2 grid-rows-3 lg:w-5/6 gap-4">
-                    <div class="h-38 bg-gradient-to-r from-red-100 to-red-50 rounded-xl">
-                    </div>
-                    <div class="bg-orange-50 rounded-xl row-span-2">
-                        <img class="mx-auto my-5" src="images/fresh-1.png" alt="">
-                    </div>
-                    <div class="bg-stone-100 rounded-xl row-span-2">
-                        <img class="mx-auto my-5" src="images/fresh-2.png" alt="">
-                    </div>
-                    <div class="h-38 bg-gradient-to-r from-stone-100 to-stone-100 rounded-xl">
-                    </div>
-                </div>
-
-                <!-- text section  -->
-                <div>
-                    <h1 class="text-5xl font-bold mb-5">Great Tea, Freshly Presented</h1>
-                    <p class="text-gray-500">The meaning of gong cha is chanese is to provide the best tea to emperor
-                        from all possessions .
-                        It represents the highest quality and self expectation. Establishing in 2006, Gong cha had been
-                        deeply appreciated by its custoers because of good words of mouth and unique customized service
-                        orginated from Taiwan.</p>
-
-                    <br>
-
-                    <h2 class="text-2xl font-bold mb-5">Unique Taste</h2>
-                    <p class="text-gray-500">A Unique and different style from other teapots gives a luxurious and
-                        minimalist impression</p>
-                    <br>
-                    <h2 class="text-2xl font-bold mb-5">Premium Quality</h2>
-                    <p class="text-gray-500">Premium Quality that makes tea more elegant and more durable when you use
-                        it.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- reviews section  -->
-        <section class="mb-24">
+    <main>
+        <!-- About us section starts here  -->
+        <section class="bg-gray-100 mt-10 md:mt-20 lg:mt-32">
             <div
-                class="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl grid grid-cols-1 lg:grid-cols-2 text-white px-7 md:px-16">
-                <!-- text section  -->
-                <div class="flex justify-center items-center overflow-hidden">
-                    <div class="w-5/6">
-                        <h1 class="text-5xl font-bold mb-5 mt-10">Meet Our Super Clients</h1>
-                        <p class="mb-5">There are many variations of passages of Lorem Ipsum available, but the majority
-                            have suffered
-                            alteration in some form, by injected humour, or randomised words which don't look even
-                            slightly
-                            believable. </p>
-                        <button class="bg-white text-orange-700 px-3 py-2 rounded-lg font-bold">Show All</button>
+                class="w-11/12 md:w-10/12  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 pt-8 pb-0 md:py-12 lg:py-16">
+                <div>
+                    <div class="-ml-11 mb-3 hidden lg:block">
+                        <img src="images/about-bg.png" alt="">
+                    </div>
+                    <div
+                        class="flex items-center  bg-white rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-3">
+                        <i class="fa-solid fa-arrow-right "></i>
+                        <p>About Us</p>
+                    </div>
+                    <div class="space-y-5 ">
+                        <h2 class="text-primary text-2xl md:text-4xl font-bold text-center lg:text-start">We design
+                            thoughtful, <br>
+                            liveable
+                            spaces</h2>
+                        <p class=" font-medium text-secondary text-center lg:text-start">Our designs are expertly
+                            tailored to elevate daily life, providing a perfect balance of practicality in every
+                            meticulously crafted detail.
+                        </p>
+                        <div class="card card-side items-start md:items-center  bg-white pl-0 md:pl-2 lg:pl-8">
+                            <figure class="w-full md:w-fit mt-5 md:mt-0 rounded-none">
+                                <img class="w-14 lg:w-28 object-cover" src="images/commercial.png" alt="">
+                            </figure>
+                            <div class="card-body py-4 pl-0 pr-2 md:p-8">
+                                <h2 class="card-title font-extrabold text-xl text-secondary">Commercial</h2>
+                                <p class="text-accent font-medium w-full lg:w-10/12">we specialize in creating
+                                    commercial
+                                    spaces that elevate daily operations.</p>
+
+                            </div>
+                        </div>
+                        <div class="card card-side items-start md:items-center  bg-white pl-0 md:pl-2 lg:pl-8">
+                            <figure class="w-full md:w-fit mt-5 md:mt-0 rounded-none">
+                                <img class="w-14 lg:w-28 object-cover" src="images/residential.png" alt="">
+                            </figure>
+                            <div class="card-body py-4 pl-0 pr-2 md:p-8">
+                                <h2 class="card-title font-extrabold text-xl text-secondary">Residential</h2>
+                                <p class="text-accent font-medium w-full lg:w-10/12">We design residential spaces that
+                                    seamlessly blend comfort and style.</p>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- reviews card section  -->
-                <div class="relative py-24 ">
 
 
-                    <!-- middle card  -->
-                    <div class="absolute z-10 top-44 md:top-52">
-                        <div
-                            class=" relative h-56 w-full md:w-3/4 bg-white text-black rounded-lg flex items-center px-5">
-                            <div class="absolute -top-5 -left-5 bg-white rounded-full">
-                                <img class="p-1" src="images/client.png" alt="">
+                <div class="mt-0 lg:mt-11">
+                    <img class="w-full h-full object-cover rounded-2xl" src="images/about-img.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- About us section ends here  -->
+
+        <!-- stat section starts here -->
+        <section class="bg-gray-100 pt-8 md:pt-20">
+            <div class="w-11/12 md:w-10/12  mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-0 bg-white rounded-3xl py-7">
+                    <div class="stat flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10 text-accent mb-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+
+                        <div class="stat-value text-5xl font-extrabold text-secondary mb-2">235+</div>
+                        <div class="stat-desc text-accent font-medium text-[16px]">Happy Client Review</div>
+                    </div>
+                    <div class="stat flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10 text-accent mb-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+
+                        <div class="stat-value text-5xl font-extrabold text-secondary mb-2">50+</div>
+                        <div class="stat-desc text-accent font-medium text-[16px]">Work Departments</div>
+                    </div>
+                    <div class="stat flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10 text-accent mb-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        </svg>
+
+
+                        <div class="stat-value text-5xl font-extrabold text-secondary mb-2">30k+</div>
+                        <div class="stat-desc text-accent font-medium text-[16px]"> Our Happy Client</div>
+                    </div>
+                    <div class="stat flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10 text-accent mb-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                        </svg>
+
+                        <div class="stat-value text-5xl font-extrabold text-secondary mb-2">307+</div>
+                        <div class="stat-desc text-accent font-medium text-[16px]">Staff Members</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- stat section ends here -->
+
+        <!-- work process section starts here  -->
+        <section class="bg-gray-100">
+
+            <div class="w-11/12 md:w-10/12  mx-auto py-8 md:py-16 lg:py-28">
+                <!-- text content  -->
+                <div class="flex flex-col items-center ">
+                    <div
+                        class="flex items-center  bg-white rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-4">
+                        <i class="fa-solid fa-arrow-right "></i>
+                        <p>How we works</p>
+                    </div>
+
+                    <h2 class="text-primary text-2xl md:text-4xl font-bold mb-6">Our Works Process
+                    </h2>
+                    <p class=" font-medium text-secondary text-center mb-8 w-full md:w-10/12 lg:w-7/12 mx-auto">Our work
+                        process ensures a seamless journey from initial consultation to final execution, delivering
+                        designs that perfectly align with your vision.</p>
+                </div>
+
+                <!-- work process card container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="card bg-[#E7C1D3] w-full ">
+                        <div class="card-body">
+                            <img class="w-12" src="images/concept.png" alt="">
+                            <h2 class="card-title text-xl font-extrabold text-font_bg_color">Concept</h2>
+                            <p class="text-secondary font-medium">We turn your ideas into a creative and practical
+                                design concept.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-[#EFDA6E] w-full ">
+                        <div class="card-body">
+                            <img class="w-12" src="images/flow-chart.png" alt="">
+                            <h2 class="card-title text-xl font-extrabold text-font_bg_color">Design Process</h2>
+                            <p class="text-secondary font-medium">Our design process turns your ideas into reality.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card bg-[#A4DAC3]  w-full ">
+                        <div class="card-body">
+                            <img class="w-12" src="images/vision.png" alt="">
+                            <h2 class="card-title text-xl font-extrabold text-font_bg_color">Supervision</h2>
+                            <p class="text-secondary font-medium">We carefully monitor every step of the project to
+                                ensure everything.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-[#77AAEA] w-full ">
+                        <div class="card-body">
+                            <img class="w-12" src="images/budget-planning.png" alt="">
+                            <h2 class="card-title text-xl font-extrabold text-font_bg_color">Budget Planning</h2>
+                            <p class="text-secondary font-medium">We help you manage costs effectively, ensuring your
+                                project.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- work process section ends here  -->
+
+        <!-- our services section starts here  -->
+        <section id="services" class="bg-gray-100 md:bg-white py-8 md:py-20 lg:py-24">
+            <div class="w-11/12 md:w-10/12  mx-auto">
+                <!-- text content  -->
+                <div class="flex flex-col items-center ">
+                    <div
+                        class="flex items-center  bg-color_bg bg-opacity-20 rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-4">
+                        <i class="fa-solid fa-arrow-right "></i>
+                        <p>What we offer</p>
+                    </div>
+
+                    <h2 class="text-primary text-2xl md:text-4xl font-bold mb-6">Our Services
+                    </h2>
+                    <p class=" font-medium text-secondary text-center mb-8 w-full md:w-10/12 lg:w-7/12 mx-auto">We offer
+                        comprehensive design solutions, from concept development to final execution, ensuring your space
+                        is functional, stylish, and uniquely yours.</p>
+                </div>
+
+                <!-- services card container  -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+
+                    <!-- service card 1  -->
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <!-- <i class="fa-solid fa-helmet-safety "></i> -->
+                            <i class="fa-light fa-helmet-safety text-6xl text-gray-400 hover:text-color_bg"></i>
+                        </figure>
+
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Construction</h2>
+                    </div>
+
+                    <!-- service card 2  -->
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <i class="fa-light fa-paint-roller text-6xl text-gray-400 hover:text-color_bg"></i>
+                        </figure>
+
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Renovation</h2>
+                    </div>
+
+
+                    <!-- service card 3  -->
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <i class="fa-light fa-toolbox text-6xl text-gray-400 hover:text-color_bg"></i>
+                        </figure>
+
+
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Consulting</h2>
+                    </div>
+
+                    <!-- service card 4  -->
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <i class="fa-light fa-screwdriver-wrench text-6xl text-gray-400 hover:text-color_bg"></i>
+                        </figure>
+
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Construct</h2>
+                    </div>
+
+                    <!-- service card 5  -->
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <i class="fa-light fa-pen-ruler text-6xl text-gray-400 hover:text-color_bg"></i>
+
+                        </figure>
+
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Architecture</h2>
+                    </div>
+                    <div class="card  w-full rounded shadow text-center">
+                        <figure class="bg-gray-100  p-5 ">
+                            <i class="fa-light fa-lightbulb text-6xl text-gray-400 hover:text-color_bg"></i>
+                        </figure>
+                        <h2 class="uppercase my-3 hover:text-color_bg font-bold text-secondary">Electrical</h2>
+                    </div>
+                </div>
+
+                <!-- another services  -->
+                <div class="flex flex-col lg:flex-row gap-4 items-center">
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 w-full lg:w-[70%] mt-12 md:mt-16 lg:mt-0">
+                        <div class="flex  gap-4">
+                            <div>
+
+                                <i
+                                    class=" fa-light fa-hammer-brush bg-color_bg px-4 py-4 rounded-full text-4xl text-white hover:bg-white hover:text-color_bg hover:border-2 border-color_bg "></i>
                             </div>
                             <div>
-                                <p class="text-gray-500 mb-5">We are providing the best and suitable home insurance
-                                    services
-                                    for
-                                    the people who are
-                                    interested to treatment</p>
-                                <h1 class="font-bold">Ilham Yuda</h1>
-                                <small class="text-gray-500 font-bold">Businessman</small>
+                                <h3 class="text-primary text-2xl font-bold mb-3">Prepair Services</h3>
+                                <p class="text-secondary">We provide detailed planning and preparation to
+                                    ensure a
+                                    smooth design process.</p>
+                            </div>
+                        </div>
+                        <div class="flex  gap-4">
+                            <div>
+                                <i
+                                    class="fa-solid fa-paint-roller bg-color_bg px-5 py-4 rounded-full text-4xl text-white hover:bg-white hover:text-color_bg hover:border-2 border-color_bg "></i>
+                            </div>
+                            <div>
+                                <h3 class="text-primary text-2xl font-bold mb-3">Wall Painting</h3>
+                                <p class="text-secondary">We offer professional wall painting services, transforming
+                                    your space with high-quality finishes.</p>
+                            </div>
+                        </div>
+                        <div class="flex  gap-4">
+                            <div>
+                                <i
+                                    class="fa-light fa-faucet-drip bg-color_bg px-5 py-4 rounded-full text-4xl text-white hover:bg-white hover:text-color_bg hover:border-2 border-color_bg "></i>
+                            </div>
+                            <div>
+                                <h3 class="text-primary text-2xl font-bold mb-3">Creative Plumbing</h3>
+                                <p class="text-secondary">We deliver innovative plumbing solutions that blend
+                                    functionality with design, ensuring efficient.</p>
+                            </div>
+                        </div>
+                        <div class="flex  gap-4">
+                            <div>
+                                <i
+                                    class="fa-light fa-chimney bg-color_bg px-5 py-4 rounded-full text-4xl text-white hover:bg-white hover:text-color_bg hover:border-2 border-color_bg "></i>
+                            </div>
+                            <div>
+                                <h3 class="text-primary text-2xl font-bold mb-3">Metal Roofing</h3>
+                                <p class="text-secondary">We provide durable and stylish metal roofing solutions,
+                                    offering superior protection and a sleek.</p>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- top card  -->
-                    <div
-                        class="relative left-8 md:left-32 opacity-40 h-56 w-full md:w-3/4 bg-white text-black rounded-lg flex items-center px-5">
-                        <div class="absolute -top-5 -left-5 bg-white rounded-full">
-                            <img class="p-1" src="images/client.png" alt="">
-                        </div>
-                        <div>
-                            <p class="text-gray-500 mb-5">We are providing the best and suitable home insurance services
-                                for
-                                the people who are
-                                interested to treatment</p>
-                            <h1 class="font-bold">Ilham Yuda</h1>
-                            <small class="text-gray-500 font-bold">Businessman</small>
-                        </div>
+                    <div class="w-full lg:w-[30%] mt-4">
+                        <img src="images/man.png" alt="">
                     </div>
-
-
-                    <!-- bottom card  -->
-                    <div
-                        class="relative left-8 md:left-32 top-10 h-56 w-full md:w-3/4 bg-white text-black rounded-lg flex items-center px-5 opacity-40">
-                        <div class="absolute -top-5 -left-5 bg-white rounded-full">
-                            <img class="p-1" src="images/client.png" alt="">
-                        </div>
-                        <div>
-                            <p class="text-gray-500 mb-5">We are providing the best and suitable home insurance services
-                                for
-                                the people who are
-                                interested to treatment</p>
-                            <h1 class="font-bold">Ilham Yuda</h1>
-                            <small class="text-gray-500 font-bold">Businessman</small>
-                        </div>
-                    </div>
-
                 </div>
+
+            </div>
+            <div class="bg-color_bg p-8 flex flex-col lg:flex-row justify-between items-center ">
+                <h2 class="text-gray-50 text-lg lg:text-2xl font-bold text-center">Contractors & Construction
+                    Managers
+                    Since 1997
+                </h2>
+                <button class=" bg-white text-secondary px-10 py-2 lg:py-4 rounded-lg font-semibold mt-4 lg:mt-0">Get a
+                    Quote</button>
             </div>
         </section>
 
-        <!-- news section  -->
-        <section>
-            <div class="text-center mb-8">
-                <h1 class=" text-3xl md:text-4xl mb-5">News & Events</h1>
-                <p class="text-gray-500 max-w-xl mx-auto">There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some form, by injected humour, or randomised
-                    words which don't look even slightly believable. </p>
+
+        <!-- our services section ends here  -->
+
+        <!-- latest portfolio section starts here  -->
+        <section id="portfolio" class="bg-gray-100 md:bg-white">
+            <div class="w-11/12 md:w-10/12  mx-auto py-8 md:py-20 lg:py-24">
+                <!-- text content  -->
+                <div class="flex flex-col items-center ">
+                    <div
+                        class="flex items-center  bg-color_bg bg-opacity-20 rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-4">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <p>Explore our Latest works</p>
+                    </div>
+
+                    <h2 class="text-primary text-2xl md:text-4xl font-bold mb-6">Our Latest Portfolio
+                    </h2>
+                    <p class=" font-medium text-secondary text-center mb-8 w-full md:w-10/12 lg:w-7/12 mx-auto">Explore
+                        our most recent projects, showcasing a range of innovative designs and transformations that
+                        highlight our commitment to quality and creativity.</p>
+                </div>
+
+                <!-- portfolio cards container  -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 ">
+
+                    <!-- portfolio card 1  -->
+                    <div
+                        class="card card-side border flex-col md:flex-row border-gray-200 col-span-full lg:col-span-8 ">
+                        <figure class="w-full py-2">
+                            <img class="pl-6 pt-4 pr-6 md:pt-0 md:pr-0 w-full object-cover" src="images/portfolio-1.png"
+                                alt="Movie" />
+                        </figure>
+                        <div class="card-body ">
+                            <h2 class="card-title text-2xl font-extrabold text-secondary ">Commercial</h2>
+                            <p class="font-medium mb-3 grow-0">Discover our latest commercial projects, we combine
+                                functional design with modern aesthetics to create dynamic and impactful spaces for
+                                businesses.</p>
+                            <a href="#"
+                                class="flex items-center gap-2 text-primary bg-white text-xl font-bold w-fit">View
+                                Details
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                </svg></a>
+                        </div>
+                    </div>
+
+                    <!-- portfolio card 2  -->
+                    <div class="card bg-white w-full border border-gray-200 col-span-full  lg:col-span-4 ">
+                        <figure class="w-full p-6">
+                            <img class="w-full object-cover" src="images/portfolio-2.png" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                    </div>
+                    <!-- portfolio card 3  -->
+                    <div
+                        class="card bg-white w-full border border-gray-200 lg:col-span-3 px-6 py-5 col-span-full order-5">
+                        <figure class="w-full h-full">
+                            <img class="w-full object-cover" src="images/portfolio-3.png" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                    </div>
+
+                    <!-- portfolio card 4  -->
+                    <div
+                        class="card card-side flex-col md:flex-row border border-gray-200 col-span-full  lg:col-span-6 order-4">
+                        <figure class="w-full h-full">
+                            <img class="pl-6 pt-6 pr-6 md:pt-0 md:pr-0 w-full object-cover" src="images/portfolio-4.png"
+                                alt="Movie" />
+                        </figure>
+                        <div class="card-body p-6">
+                            <h2 class="card-title text-2xl font-extrabold text-secondary ">Residential</h2>
+                            <p class="font-medium mb-3 grow-0"> View our latest home designs that combine comfort and
+                                style.
+
+
+
+                            </p>
+                            <a href="#"
+                                class="flex items-center gap-2 text-primary bg-white text-xl font-bold w-fit">View
+                                Details
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                </svg></a>
+                        </div>
+                    </div>
+
+                    <!-- portfolio card 5  -->
+                    <div
+                        class="card bg-white w-full border border-gray-200 col-span-full  lg:col-span-3  px-6 py-5 order-3">
+                        <figure class="w-full h-full ">
+                            <img class="w-full object-cover" src="images/portfolio-5.png" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                    </div>
+
+                    <!-- portfolio card 6  -->
+                    <div
+                        class="card bg-white w-full border border-gray-200 col-span-full  lg:col-span-3  px-6 py-5 order-6 block md:hidden">
+                        <figure class="w-full h-full ">
+                            <img class="w-full object-cover" src="images/portfolio-5.png" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-20 gap-10">
-                <!-- first card  -->
-                <div class="border rounded-lg p-5">
-                    <img class="mb-5" src="images/news-1.png" alt="">
-                    <small class="text-gray-500">Feb 05, 2027</small>
-                    <h2 class="text-black font-bold text-xl my-2">Collecting 8 points for discount</h2>
-                    <p class="text-gray-500 mb-2">There are many variations of passages of Lorem Ipsum available.</p>
-                    <p class="text-black font-bold text-lg">Learn More</p>
+        </section>
+        <!-- latest portfolio section ends here  -->
+
+
+        <!-- Articles section starts here  -->
+        <section id="blogs" class="bg-gray-100 py-8 md:py-20 lg:py-28">
+            <div class="w-11/12 md:w-10/12  mx-auto">
+                <!-- text content  -->
+                <div class="text-center flex flex-col items-center ">
+                    <div
+                        class="flex items-center  bg-color_bg bg-opacity-20 rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-4">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <p>Rinterio News</p>
+                    </div>
+
+                    <h2 class="text-primary text-2xl md:text-4xl font-bold mb-6">Read Our Articles and News
+                    </h2>
+                    <p class=" font-medium text-secondary text-center mb-8 w-full md:w-10/12 lg:w-7/12 mx-auto">Explore
+                        our articles and news to stay informed about the latest trends, tips, and updates in design, and
+                        get inspired by our industry insights and project highlights.
+                    </p>
                 </div>
-                <!-- second card  -->
-                <div class="border rounded-lg p-5">
-                    <img class="mb-5" src="images/news-2.png" alt="">
-                    <small class="text-gray-500">Feb 05, 2027</small>
-                    <h2 class="text-black font-bold text-xl my-2">Collecting 8 points for discount</h2>
-                    <p class="text-gray-500 mb-2">There are many variations of passages of Lorem Ipsum available.</p>
-                    <p class="text-black font-bold text-lg">Learn More</p>
-                </div>
-                <!-- third card  -->
-                <div class="border rounded-lg p-5">
-                    <img class="mb-5" src="images/news-3.png" alt="">
-                    <small class="text-gray-500">Feb 05, 2027</small>
-                    <h2 class="text-black font-bold text-xl my-2">Collecting 8 points for discount</h2>
-                    <p class="text-gray-500 mb-2">There are many variations of passages of Lorem Ipsum available.</p>
-                    <p class="text-black font-bold text-lg">Learn More</p>
+
+                <!-- articles container  -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+
+                    <!-- article 1  -->
+                    <div class="card bg-white w-full">
+                        <figure class="w-full px-5 pt-5 lg:px-6 lg:pt-6 ">
+                            <img class="w-full" src="images/article1.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body pt-4 px-5 md:px-8">
+                            <div class="flex gap-3">
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">July14, 2024</p>
+                                </div>
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">By Admin</p>
+                                </div>
+                            </div>
+                            <h2 class="card-title font-extrabold text-xl text-secondary my-2">Top Trends in Interior
+                                Design for 2024.</h2>
+                            <p class="font-medium text-accent mb-3">Explore this year's top interior design trends, new
+                                color palettes, materials.
+                            </p>
+                            <div class="card-actions">
+                                <a href="#" class="flex items-center gap-2 text-primary  text-xl font-bold">Read
+                                    More
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- article 2  -->
+                    <div class="card bg-white w-full">
+                        <figure class="w-full px-5 pt-5 lg:px-6 lg:pt-6 ">
+                            <img class="w-full" src="images/article2.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body pt-4 px-5 md:px-8">
+                            <div class="flex gap-3">
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">June14, 2024</p>
+                                </div>
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">By Admin</p>
+                                </div>
+                            </div>
+                            <h2 class="card-title font-extrabold text-xl text-secondary my-2">Maximizing Small Spaces:
+                                Smart Design Tips.</h2>
+                            <p class="font-medium text-accent mb-3">Learn how to make the most of compact living areas
+                                with creative design .
+                            </p>
+                            <div class="card-actions">
+                                <a href="#" class="flex items-center gap-2 text-primary  text-xl font-bold">Read
+                                    More
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- article 3  -->
+                    <div class="card bg-white w-full">
+                        <figure class="w-full px-5 pt-5 lg:px-6 lg:pt-6 ">
+                            <img class="w-full" src="images/article3.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body pt-4 px-5 md:px-8">
+                            <div class="flex gap-3">
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">May14, 2024</p>
+                                </div>
+                                <div class="flex text-accent font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                    <p class="ml-1 lg:ml-2">By Admin</p>
+                                </div>
+                            </div>
+                            <h2 class="card-title font-extrabold text-xl text-secondary my-2">Understanding the Basics
+                                of Effective Space Planning.
+                            </h2>
+                            <p class="font-medium text-accent mb-3">Get to know the essential principles of space
+                                planning, create well-organized.
+                            </p>
+                            <div class="card-actions">
+                                <a href="#" class="flex items-center gap-2 text-primary  text-xl font-bold">Read
+                                    More
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="size-8 bg-color_bg text-font_bg_color rounded-full p-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <!-- Articles section ends here  -->
+
+        <!-- Let’s Discuss Next Project section starts here -->
+
+        <section id="contact-us" class="mt-2 bg-projectBg bg-no-repeat bg-cover py-8 md:py-20 lg:py-24">
+            <div class="w-11/12 md:w-10/12  mx-auto">
+                <!-- text content  -->
+                <div class="flex flex-col items-center ">
+                    <div
+                        class="flex items-center  bg-color_bg bg-opacity-20 rounded-3xl font-bold text-secondary text-lg py-2 px-4 gap-2 w-fit mx-auto lg:mx-0 mb-4">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <p>Let’s Connect</p>
+                    </div>
+
+                    <h2 class="text-primary text-center text-2xl md:text-4xl font-bold mb-6">Let’s Discuss Next Project
+                    </h2>
+                    <p class=" font-medium text-secondary text-center mb-8 w-full md:w-10/12 lg:w-7/12 mx-auto">Ready to
+                        embark on your next design adventure? Let’s discuss your ideas and goals in detail, and explore
+                        how we can transform them into a stunning reality.
+                    </p>
+                </div>
+                <!-- form container  -->
+
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <label class="input border border-gray-200 rounded-[64px] flex items-center gap-2">
+                        <input type="text" class="grow placeholder:font-medium " placeholder="First Name*" required />
+                    </label>
+                    <label class="input border-gray-200 rounded-[64px] flex items-center gap-2">
+                        <input type="text" class="grow placeholder:font-medium" placeholder="Last Name*" required />
+                    </label>
+                    <label class="input border-gray-200 rounded-[64px] flex items-center gap-2">
+                        <input type="number" class="grow placeholder:font-medium" placeholder="Phone Number*"
+                            required />
+                    </label>
+                    <label class="input border-gray-200 rounded-[64px] flex items-center gap-2">
+                        <input type="email" class="grow placeholder:font-medium" placeholder="Email Address*"
+                            required />
+                    </label>
+
+                    <textarea
+                        class="textarea border-gray-200 h-72 rounded-[32px] col-span-full lg:col-span-2 placeholder:font-medium"
+                        placeholder="Write your message here"></textarea>
+                    <a
+                        class="btn text-font_bg_color bg-color_bg hover:bg-color_bg  text-lg font-extrabold rounded-[32px] col-span-full lg:col-span-2">Send
+                        Mail<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-8  bg-font_bg_color text-white rounded-full p-2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                        </svg>
+                    </a>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- Let’s Discuss Next Project section ends here -->
+
     </main>
     <!-- main ends here  -->
 
     <!-- footer starts here  -->
-    <footer class="bg-orange-200 text-gray-700 py-10 px-4 md:px-16 ">
-        <div class="w-9/12 mx-auto">
-            <!-- logo -->
-            <div class="mb-8 flex justify-between">
-                <img class="mb-8" src="images/cup.png" alt="">
-                <div class="flex items-center gap-2">
-                    <h4>Ready to get strated?</h4>
-                    <button
-                        class="bg-gradient-to-r from-orange-500 to-red-500 px-3 py-2 rounded-lg text-white font-bold">Get
-                        Started</button>
+    <footer class="mt-2 bg-font_bg_color py-16 lg:py-24">
+        <div class="footer footer-center  md:w-full w-11/12 mx-auto gap-y-0">
+            <aside>
+                <div class="flex items-center gap-2 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-9 text-black bg-color_bg mt-2 p-2 rounded-full ">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                    <a class="text-3xl font-extrabold text-gray-200" href="#">Rinterio</a>
                 </div>
+                <p class="font-medium text-accent text-[16px] w-full md:w-8/12 mb-8 md:mb-12">
+                    Find everything you need at a glance, links to our services, latest news, and contact information.
+                    Stay informed and get in touch with us easily.
+                </p>
+
+            </aside>
+            <nav class="mb-8 md:mb-12">
+                <ul class="flex flex-col md:flex-row gap-8 md:gap-28 text-gray-200 text-[16px]">
+                    <li>
+                        <a href="#"
+                            class="hover:text-white transition-colors ease-in-out duration-500 hover:font-extrabold">Home</a>
+                    </li>
+                    <li><a href="#services"
+                            class="hover:text-white transition-colors ease-in-out duration-500 hover:font-extrabold">Services</a>
+                    </li>
+                    <li><a href="#portfolio" class="hover:text-white transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Portfolio</a></li>
+                    <li><a href="#blogs"
+                            class="hover:text-white transition-colors ease-in-out duration-500 hover:font-extrabold">Blogs</a>
+                    </li>
+                    <li><a href="#contact-us" class="hover:text-white transition-colors ease-in-out duration-500
+                                hover:font-extrabold">Contact Us</a></li>
+                </ul>
+
+            </nav>
+            <div class="w-full md:w-fit">
+                <a
+                    class="btn border-0 text-font_bg_color bg-color_bg text-lg font-extrabold rounded-3xl w-full hover:bg-color_bg">Book
+                    Consult <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-8  bg-font_bg_color text-white rounded-full p-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                </a>
             </div>
-            <!-- Links  -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- first column  -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-3">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li> <a class="hover:text-orange-600" href="">Home</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">About us</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">Insurance</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">Privacy Policy</a> </li>
-                    </ul>
-                </div>
-
-                <!-- Second column  -->
-
-                <div>
-                    <h3 class="font-semibold text-lg mb-3">Our Service</h3>
-                    <ul class="space-y-2">
-                        <li> <a class="hover:text-orange-600" href="">Life insurance</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">Car insurance</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">Health insurance</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">House Policy</a> </li>
-                    </ul>
-                </div>
-
-                <!-- Third column  -->
-
-                <div>
-                    <h3 class="font-semibold text-lg mb-3">Help</h3>
-                    <ul class="space-y-2">
-                        <li> <a class="hover:text-orange-600" href="">FAQs</a> </li>
-                        <li> <a class="hover:text-orange-600" href="">Contact Us</a> </li>
-                    </ul>
-                </div>
-
-                <!-- Fourth column  -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-3">Subscribe to our newsletter</h3>
-                    <div class="flex flex-col space-y-2">
-                        <div>
-                            <input class="bg-transparent border-b-2 outline-none border-black w-4/5 md:w-5/6"
-                                type="email" placeholder="Email Address">
-                            <i
-                                class="fa-solid fa-chevron-right w-7 h-7 bg-orange-600 rounded-full inline-flex justify-center items-center text-white"></i>
-                        </div>
-
-                        <div class="flex justify-between mt-8 mb-2 w-2/5">
-                            <i class="fa-brands fa-facebook"></i>
-                            <i class="fa-brands fa-square-instagram"></i>
-                            <i class="fa-brands fa-square-twitter"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center pt-4 mt-4">
-                <p class="text-sm text-gray-500">© 2027 UIDesign.to - All rights reserved.</p>
-            </div>
-
         </div>
     </footer>
     <!-- footer ends here  -->
+
 </body>
 
 </html>
